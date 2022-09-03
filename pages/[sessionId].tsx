@@ -35,7 +35,7 @@ const Image_selector = ({images, change}:any) => {
 
 //Hlavní element
 
-const videoPage:NextPage = ({sessionId, images, playerData}:any) => {
+const VideoPage:NextPage = ({sessionId, images, playerData}:any) => {
     //Declare variable
     //Změna ve vnitř videa
     const [text, changeText] = useState("")
@@ -45,12 +45,15 @@ const videoPage:NextPage = ({sessionId, images, playerData}:any) => {
     //On open
     useEffect(()=>{
         // přiřazení proměných k přehrávači
-        let webPlayerR = document.getElementById(sessionId) as HTMLElement
-        //Declare data
-        webPlayerR.data = {
-            project: {
-                'TEXT_0': text,
-                "IMAGE_0" : image
+        let webPlayerR = document.getElementById(sessionId) as HTMLElement | null
+        
+        if (webPlayerR != null){
+            //Declare data
+            webPlayerR.data = {
+                project: {
+                    'TEXT_0': text,
+                    "IMAGE_0" : image
+                }
             }
         }
 
@@ -68,7 +71,7 @@ const videoPage:NextPage = ({sessionId, images, playerData}:any) => {
         changeText(e.target.value)
     }
     //Změna obrázků
-    const changeImageF = (url: String) => {
+    const changeImageF = (url: any) => {
         changeImage(url)
     }
     //Back button
@@ -193,4 +196,4 @@ export const getStaticProps: GetStaticProps = async (context) => {
     };
   };
 
-export default videoPage
+export default VideoPage

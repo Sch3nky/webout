@@ -90,7 +90,7 @@ const Home: NextPage = ({data}:any) => {
     <div className={styles.container}>
 
       <Head>
-        <title>Webout test</title>
+        <title>Webout.me</title>
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preload" as="image" href="https://www.webout.me/beta/assets/img/webout_logo_3.png"></link>
