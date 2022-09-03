@@ -12,6 +12,8 @@ import styles from "../styles/VideoPage.module.scss"
 import * as Icon from 'react-bootstrap-icons';
 import Head from 'next/head'
 
+import json from "../public/images.json"
+
 //Image in Image_selector
 //Obsahuje button s funkcí, která změní url adressu, a img
 const Image = ({image, change}:any) => {
@@ -151,21 +153,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
     //sessionId
     const { sessionId }:any = context.params;
     //Images links
-    const data: any = await fetch("http://localhost:3000/images.json").then(
-            res => {
-                if (res.ok){
-                    return res.json().then(
-                        json => {
-                            const imageList:String[] = json["images"][sessionId] || []
-                            return imageList
-                        }
-                    )
-                }
-                else{
-                    return []
-                }
-            }
-        )
+    const data: any = json["images"]
+
     //Data k video (popis, jméno, ...)
     const playerData: any = await fetch("https://cdn.webout.me/data/projects.json").then(
         res => {
@@ -190,7 +179,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     return {
       props: {
         sessionId,
-        images: data,
+        images: data[sessionId] || [],
         playerData: playerData,
       },
     };
