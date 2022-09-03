@@ -1,0 +1,26 @@
+{
+    "images": {
+        "showreel_10k1d1a3": [
+            "images/zoot.png",
+            "images/czc.svg",
+            "images/broker_consulting.png",
+            "images/Zasilkovna.png",
+            "images/airbank.png",
+            "images/hm_logo.png",
+            "images/Philips_male.png",
+            "images/samsung_male.png",
+            "images/sony_male.png"
+        ], 
+        "demo_cz_019abc12": [
+            "images/zoot.png",
+            "images/czc.svg",
+            "images/broker_consulting.png",
+            "images/Zasilkovna.png",
+            "images/airbank.png",
+            "images/hm_logo.png",
+            "images/Philips_male.png",
+            "images/samsung_male.png",
+            "images/sony_male.png"
+        ]
+    } 
+}

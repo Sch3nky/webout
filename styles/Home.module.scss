@@ -1,0 +1,189 @@
+$background: #001120;
+$first-color: #6297D6;
+$secondary-color: #e5ecf0;
+
+/*Hlavní kontainer*/
+.container {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: $background;
+  padding-bottom: 40px;
+}
+
+/*Záhlaví*/
+.header {
+  display: flex;
+
+  width: 100%;
+
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+/*Logo image*/
+.header > img{
+  height: 150px;
+  width: auto;
+}
+
+@media screen and (max-width: 900px) {
+  .header > img{
+    height: auto;
+    width: 86.49vw;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .header > img{
+    height: auto;
+    width: 666px;
+  }
+}
+
+@media screen and (max-width: 666px) {
+  .header > img{
+    height: auto;
+    width: 100vw;
+  }
+}
+
+/*Hlavní content, který obsauje odkazy na videa*/
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  min-height: calc(100vh - 200px);
+
+  align-items: center;
+  gap: 40px;
+}
+/*Search bar styles*/
+.main > .searchBar{
+  width: 100%;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.main > .searchBar > input{
+  width: 40%;
+  height: 40px;
+  
+  border: 1px solid $first-color;
+  border-radius: 5px;
+
+  background-color: $secondary-color;
+
+  font-size: 20px;
+  color: #001D2F;
+  padding: 0 10px 0 10px;
+  transition-duration: 50ms;
+}
+
+@media screen and (max-width: 1000px) {
+  .main > .searchBar > input{
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 700Px) {
+  .main > .searchBar > input{
+    width: 80%;
+    min-width: 350px;
+  }
+}
+
+@media screen and (max-width: 400Px) {
+  .main > .searchBar > input{
+    width: 90%;
+    min-width: 100px;
+  }
+}
+
+.main > .searchBar > input:focus{
+  transform: scale(1.05);
+  background-color: white;
+}
+
+.main > .searchBar > input::placeholder{
+  font-size: 20px;
+  color: #001D2F;
+  opacity: 40%;
+}
+
+/*Video cards styles*/
+.main > .Videos{
+  width: 95%;
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-around;
+  gap: 30px
+}
+
+.main > .Videos .video{
+  position: relative;
+  width: calc(100% /3 - 30px);
+  max-width: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  transition-duration: 200ms;
+}
+
+.main > .Videos .video > .video_headline{
+  width: calc(100%);
+  background-color: $first-color;
+  color: $secondary-color;
+  letter-spacing: 3px;
+  font-size: 25px;
+  font-weight: 600;
+  padding: 10px;
+}
+
+@media screen and (max-width: 950px) {
+  .main > .Videos .video{
+    position: relative;
+    width: calc(100%/2 - 30px);
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .main > .Videos .video{
+    position: relative;
+    width: calc(100% - 30px);
+    max-width: 350px;
+  }
+}
+
+.main > .Videos .video:hover{
+  transform: scale(1.025);
+  box-shadow: 0 0 10px $secondary-color;
+}
+
+.main > .Videos .video > .card-header{
+  font-size: 35px;
+}
+
+.main > .Videos .video > img{
+  width: 100%;
+  height: auto;
+}
+
